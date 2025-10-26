@@ -24,7 +24,7 @@ const Upload = ({ onUploadSuccess }) => {
     try {
       // Use full URL instead of env variable
       const response = await axios.post(
-        'http://localhost:5001/api/documents/upload',
+        'https://subham-s-notebook-llm-clone.onrender.com/api/documents/upload',
         formData,
         {
           headers: {

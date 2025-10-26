@@ -22,10 +22,10 @@ const PDFViewer = ({ documentId, filename, pageCount, currentPage, onPageChange 
 
     try {
       console.log('Fetching document info...');
-      const docResponse = await axios.get(`http://localhost:5001/api/documents/${documentId}`);
+      const docResponse = await axios.get(`https://subham-s-notebook-llm-clone.onrender.com/api/documents/${documentId}`);
       const { filepath } = docResponse.data;
 
-      const fullUrl = `http://localhost:5001${filepath}`;
+      const fullUrl = `https://subham-s-notebook-llm-clone.onrender.com${filepath}`;
       console.log('Downloading PDF:', fullUrl);
 
       const pdfResponse = await axios.get(fullUrl, {
@@ -107,7 +107,7 @@ const PDFViewer = ({ documentId, filename, pageCount, currentPage, onPageChange 
             <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>{error}</div>
             <div style={{ fontSize: '0.9rem', color: '#666' }}>
               <strong>Troubleshooting:</strong><br />
-              1. Is backend running on <code style={{ background: '#f1f1f1', padding: '2px 6px' }}>http://localhost:5001</code>?<br />
+              1. Is backend running on <code style={{ background: '#f1f1f1', padding: '2px 6px' }}>https://subham-s-notebook-llm-clone.onrender.com</code>?<br />
               2. Open this URL directly: <br />
               <code style={{ 
                 background: '#f1f1f1', 
@@ -116,7 +116,7 @@ const PDFViewer = ({ documentId, filename, pageCount, currentPage, onPageChange 
                 fontSize: '0.8rem',
                 wordBreak: 'break-all'
               }}>
-                http://localhost:5001{docResponse?.data?.filepath || '/uploads/...'}
+                https://subham-s-notebook-llm-clone.onrender.com{docResponse?.data?.filepath || '/uploads/...'}
               </code>
             </div>
           </div>

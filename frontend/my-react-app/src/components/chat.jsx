@@ -28,7 +28,7 @@ const Chat = ({ documentId, filename, onCitationClick }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5001/api/documents/${documentId}/query`,
+        `https://subham-s-notebook-llm-clone.onrender.com/api/documents/${documentId}/query`,
         { question: input }
       );
 
